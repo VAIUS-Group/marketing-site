@@ -7,6 +7,7 @@ class JobList extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            expandSection: null,
             jobs: [
                 {
                     title: 'Python Developer',
@@ -20,16 +21,41 @@ class JobList extends Component {
             ]
         }
     }
-    renderList() {
-        return this.state.jobs.map(job => {
+
+    handleClick(index){
+        const { expandSection } = this.state
+        if (index === expandSection){
+            this.setState({expandSection: null});
+        } else {
+            this.setState({expandSection: index})
+        }
+    }
+
+    renderList = () => {
+        return this.state.jobs.map((job, i) => {
+            const activeSection = this.state.expandSection;
             return (
-                // className="panel"
-                <Accordion headerClass='post-box' contentWrapperClass='post-box' title={job.title}>
-                    <p>This is the collapsible content. It can be any element or React component you like.</p>
-                    <p>It can even be another Collapsible component. Check out the next section!</p>
-                </Accordion>
+                <div key={i} onClick={() => this.handleClick(i)} className={"panel"}>
+                    <div className="row">
+                        <h2>{job.title}</h2>
+                        <i className="chevron-down" class={activeSection === i ? "fa fa-chevron-up" : "fa fa-chevron-down"} aria-hidden="true"></i>
+                    </div>
+                    <br/>
+                    {this.expandedView(i)}
+                </div>
             )
         })
+    }
+
+    expandedView = (index) => {
+        const activeSection = this.state.expandSection;
+        if (activeSection === index){
+            return (
+                <div className="expanded-container">
+                    <h1>{`Testing the collapse thing for ${this.state.jobs[index].title}`}</h1>
+                </div>
+            )
+        } else return;
     }
 
     render() {

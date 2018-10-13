@@ -29,14 +29,40 @@
 
 .post-box {
   background: #fff;
-  padding: 20px 40px 40px;
+  padding: 40px 40px 40px;
   -ms-border-radius: 10px;
   border-radius: 10px;
   box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
   width: 75vw;
 }
 
+.expanded-container {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+
+.row {
+  display: flex;
+  flex: 1;
+  width: 70vw;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
 .panel {
   box-shadow: 0 0px 70px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 30px 50px;
+}
+
+.chevron-down {
+  height: 30;
+  width: auto;
 }
