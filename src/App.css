@@ -1,0 +1,42 @@
+.App {
+  flex: 1;
+}
+
+.App-logo {
+  height: 5vmin;
+  width: auto;
+  padding-left: 2vw;
+  padding-top: 2vh;
+}
+
+.App-header {
+  background-color: #fff;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  height: 50vh;
+  width: 100vw;
+  margin-top: 15vh;
+  justify-content: center;
+  display: flex;
+  margin: 0px;
+}
+
+.post-box {
+  background: #fff;
+  padding: 20px 40px 40px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
+  width: 75vw;
+}
+
+.panel {
+  box-shadow: 0 0px 70px rgba(0, 0, 0, 0.3);
+  padding: 30px 50px;
+}
