@@ -1,5 +1,7 @@
 .App {
   flex: 1;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 .App-logo {
@@ -19,7 +21,7 @@
 }
 
 .container {
-  height: 50vh;
+  min-height: 50vh;
   width: 100vw;
   margin-top: 15vh;
   justify-content: center;
@@ -39,6 +41,7 @@
 .expanded-container {
   display: flex;
   flex-direction: column;
+  width: 75vw;
   background: transparent;
 }
 
@@ -63,6 +66,30 @@
 }
 
 .chevron-down {
-  height: 30;
-  width: auto;
+  height: auto;
+  width: 50px;
+}
+
+.panel-title-text {
+  display: block;
+  padding: 0;
+  font-size: 24px;
+  color: #373e45;
+}
+
+.job-text {
+  color: #9093a1;
+  letter-spacing: .2px;
+  font-size: 16px;
+  line-height: 1.86;
+}
+
+.jobs-footer {
+  background-color: blue;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex: 1;
+  width: 100vw;
+  height: 10vh;
 }
