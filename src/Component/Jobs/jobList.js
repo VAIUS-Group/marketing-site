@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Accordion from 'react-collapsy';
-import '../../../node_modules/react-collapsy/lib/index.css';
 import mockData from './mockJobData.js';
 import '../../App.css';
 
@@ -29,7 +27,7 @@ class JobList extends Component {
                 <div key={i} onClick={() => this.handleClick(i)} className={"panel"}>
                     <div className="row">
                         <h2 className="panel-title-text">{job.title}</h2>
-                        <i className="chevron-down" class={activeSection === i ? "fa fa-chevron-up" : "fa fa-chevron-down"} aria-hidden="true"></i>
+                        <i style={{ fontSize: 25 }} class={activeSection === i ? "fa fa-chevron-up" : "fa fa-chevron-down"} aria-hidden="true"></i>
                     </div>
                     <br/>
                     {this.expandedView(i)}

@@ -23,7 +23,7 @@
 .container {
   min-height: 50vh;
   width: 100vw;
-  margin-top: 15vh;
+  margin-top: 25vh;
   padding-bottom: 15vh;
   justify-content: center;
   display: flex;
@@ -33,6 +33,7 @@
 .post-box {
   background: #fff;
   padding: 40px 40px 40px;
+  margin-top: 100px;
   -ms-border-radius: 10px;
   border-radius: 10px;
   box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
@@ -66,11 +67,6 @@
   padding: 30px 50px;
 }
 
-.chevron-down {
-  height: auto;
-  width: 50px;
-}
-
 .panel-title-text {
   display: block;
   padding: 0;
@@ -86,11 +82,40 @@
 }
 
 .jobs-footer {
-  background-color: blue;
+  background-color:#0056da;
   position: fixed;
   bottom: 0px;
+  margin: 0px;
   display: flex;
   flex: 1;
   width: 100vw;
   height: 10vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-title {
+  line-height: 1.33;
+  font-weight: 600;
+  font-size: 26;
+  color: #fff;
+}
+
+.footer-text {
+  letter-spacing: .2px;
+  color: #fff;
+  font-size: 14;
+}
+
+.social-icon {
+  color: #28cc8b;
+  background: #fff;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 32px;
 }
