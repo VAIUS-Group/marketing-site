@@ -38,9 +38,9 @@ class JobList extends Component {
         })
     }
 
-    renderChecklist = (i) => {
-        if (!this.state.jobs[i].responsibilities) return;
-        return this.state.jobs[i].responsibilities.map(item => {
+    renderBulletedList = (field) => {
+        if (!field) return;
+        return field.map(item => {
             return (
                 <p style={{ paddingLeft: 45}} className="job-text">{item}</p>
             )
@@ -49,27 +49,35 @@ class JobList extends Component {
 
     expandedView = (index) => {
         const activeSection = this.state.expandSection;
+        const field = this.state.jobs[index];
         if (activeSection === index){
             return (
                 <div className="expanded-container">
                     <div style={{display: 'flex', alignItems: 'center', flexDirection: 'row'}}>
                         <h2 style={{fontWeight: '700', paddingLeft: 30, paddingRight: 10,}} className="job-text">Job Location: </h2>
-                        <h2 className="job-text">{this.state.jobs[index].location}</h2>
+                        <h2 className="job-text">{field.location}</h2>
                     </div>
                     {/* Job Description Section */}
                     <div style={{paddingLeft: 30, paddingTop: 30}}>
                         <h2 className="job-text">Job Description: </h2>
-                        <p className="job-text">{this.state.jobs[index].description}</p>
+                        <p className="job-text">{field.description}</p>
                     </div>
                     {/* Requirement Section */}
                     <div style={{paddingLeft: 30, paddingRight: 30}}>
-                        <h2 className="job-text">Requirements: </h2>
-                        <p className="job-text">{this.state.jobs[index].requirements}</p>
+                    <h2 className="job-text">Requirements: </h2>
+                        {this.renderBulletedList(field.requirements)}
                     </div>
-                    <div>
-                        {this.renderChecklist(index)}
+                    {/* Responsibilities Section */}
+                    <div style={{paddingLeft: 30, paddingRight: 30}}>
+                    {field.responsibilities ? <h2 className="job-text">Responsibilities: </h2> : null}
+                        {this.renderBulletedList(field.responsibilities)}
                     </div>
-                    <h4 className="job-text" style={{fontWeight: '600', paddingRight: 30}}>Please email resume/CV to jayden@vaius.group. We will get back to you within 24 hours to follow up.</h4>
+                    {/* Personality Section */}
+                    <div style={{paddingLeft: 30, paddingRight: 30}}>
+                        {field.personalTraits ? <h2 className="job-text">Personal Traits: </h2> : null}
+                        {this.renderBulletedList(field.personalTraits)}
+                    </div>
+                    <h4 className="job-text" style={{fontWeight: '600', paddingLeft: 30}}>Please email resume/CV to jayden@vaius.group. We will get back to you within 24 hours to follow up.</h4>
                 </div>
             )
         } else return;
