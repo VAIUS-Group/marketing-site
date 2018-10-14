@@ -10,7 +10,7 @@ class JobsFooter extends Component {
             <footer className="jobs-footer">
                 <div style={{ justifyContent: 'center', alignItems: 'center', paddingBottom: 10 }}>
                     <h3 style={{ color: '#fff' }}>Get In Touch</h3>
-                    <a style={{ color: '#fff', textDecoration: 'none', fontWeight: '500'}} href="http://vaius.group/contact.html" target="_blank">info@vaius.group</a>
+                    <a style={{ color: '#fff', textDecoration: 'none', fontWeight: '500'}} href="mailto: info@vaius.group" target="_blank">info@vaius.group</a>
                 </div>
                 <div style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <a href="http://vaius.group/"><img style={{marginTop: 3, marginLeft: 5, height: 50, width: 'auto'}} alt="VAIUS LOGO" src={Logo}/></a>
